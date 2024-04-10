@@ -1,0 +1,76 @@
+:root {
+  --background-color-light: linear-gradient(to right bottom, #e8c6b1 73%, #bd7351 104%);
+  --background-color-dark: linear-gradient(to right bottom, #2b2b2b 5%, #838181 150%);
+  --text-color-light: #836952;
+  --text-color-dark: #d9d9d9;
+  --box-shadow-color-light: #bd7351FF;
+  --box-shadow-color-dark: #404040FF;
+}
+
+body {
+  background: var(--background-color-light);
+}
+
+.dark-mode {
+  background: var(--background-color-dark);
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 160px);
+  width: calc(100vw - 160px);
+  margin: 80px;
+  box-shadow: 17px 20px 6px var(--box-shadow-color-light);
+}
+
+.dark-mode .page {
+  box-shadow: 17px 20px 6px var(--box-shadow-color-dark);
+}
+
+.page-content {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.margin-top-65 {
+  margin-top: 65px;
+}
+
+.font-noto {
+  font-family: "Noto Serif", serif;
+  color: var(--text-color-light);
+}
+
+.dark-mode .font-noto {
+  color: var(--text-color-dark);
+}
+
+.font-noto-large {
+  font-size: 70px;
+}
+.font-noto-medium {
+  font-size: 50px;
+}
+.font-noto-small {
+  font-size: 20px;
+}
+.header-bottom > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+}
+.img-rounded {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.link-center {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  width: 100%;
+}
