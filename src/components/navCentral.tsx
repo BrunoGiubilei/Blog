@@ -1,5 +1,4 @@
 import { useContext, useState, useEffect } from 'react';
-import { Link } from "framework7-react";
 import { AppContext } from '../pages/home';
 
 const NavCentral = () => {
@@ -15,16 +14,12 @@ const NavCentral = () => {
   const imagePath = `../assets/bg/${isDarkMode ? 'dark' : 'light'}/bg${bgNumber}.jpeg`;
 
   return (
-    <div className='grid grid-cols-3 grid-gap width-100 text-align-center'>
-      <div className='link-center'>
-        <Link href='/' className='font-noto font-noto-small link ripple-blur ripple-color-white'>Anterior</Link>
-      </div>
+    <div className='grid grid-cols-3 grid-gap width-100 text-align-center user-select-none'>
+      <div></div>
       <div>
         <img src={imagePath} className='width-100 img-rounded' />
       </div>
-      <div className='link-center'>
-        <Link href='/' className='font-noto font-noto-small link ripple-blur ripple-color-white'>Próximo</Link>
-      </div>
+      <div></div>
     </div>
   );
 };

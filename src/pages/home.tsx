@@ -1,4 +1,4 @@
-import React, { useState, createContext, ReactNode } from 'react';
+import React, { useState, useEffect, createContext, ReactNode } from 'react';
 import MainPage from '../components/page';
 
 interface Props {
@@ -15,8 +15,16 @@ export const AppContext = createContext({
 const AppProvider: React.FC<Props> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  useEffect(() => {
+    const darkMode = localStorage.getItem('BlogIsDarkMode');
+    if (darkMode !== null) 
+      setIsDarkMode(darkMode === 'true');
+  }, []);
+
   const handleClick = () => {
-    setIsDarkMode(!isDarkMode);
+    const newIsDarkMode = !isDarkMode;
+    setIsDarkMode(newIsDarkMode);
+    localStorage.setItem('BlogIsDarkMode', String(newIsDarkMode));    
   };
 
   return (

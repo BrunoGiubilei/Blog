@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development vite",
+    "dev": "cross-env NODE_ENV=development vite --force",
     "build": "cross-env NODE_ENV=production vite build && npx tsc && npx workbox generateSW workbox-config.js && cp -R ./src/assets/* ./assets/"
   },
   "browserslist": [
@@ -17,11 +17,20 @@
     "last 5 Firefox versions"
   ],
   "dependencies": {
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.12.7",
+    "aws-sdk": "^2.1600.0",
+    "axios": "^1.6.8",
+    "crypto-js": "^4.2.0",
     "dom7": "^4.0.6",
     "framework7": "^8.3.3",
     "framework7-icons": "^5.0.5",
     "framework7-react": "^8.3.3",
+    "jsonwebtoken-esm": "^2.0.1",
+    "kv-storage-polyfill": "^2.0.0",
     "material-icons": "^1.13.12",
+    "mock-aws-s3": "^4.0.2",
+    "nock": "^13.5.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,6 +38,10 @@
     "swiper": "^11.1.0"
   },
   "devDependencies": {
+    "@types/argon2": "^0.15.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/crypto-js": "^4.2.2",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
@@ -37,6 +50,7 @@
     "cpy-cli": "^5.0.0",
     "cross-env": "^7.0.3",
     "postcss-preset-env": "^9.5.4",
+    "simplecrypt": "^0.1.0",
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
     "workbox-cli": "^7.0.0"

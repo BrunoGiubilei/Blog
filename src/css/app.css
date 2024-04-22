@@ -1,6 +1,7 @@
 :root {
   --background-color-light: linear-gradient(to right bottom, #e8c6b1 73%, #bd7351 104%);
   --background-color-dark: linear-gradient(to right bottom, #2b2b2b 5%, #838181 150%);
+  --background-color-light-list: #ffdcc6;
   --text-color-light: #836952;
   --text-color-dark: #d9d9d9;
   --box-shadow-color-light: #bd7351FF;
@@ -15,24 +16,63 @@ body {
   background: var(--background-color-dark);
 }
 
-.page {
+div.list.dark-mode-postagem > ul > li > * {
+  background: var(--box-shadow-color-dark);
+  color: var(--text-color-dark);
+}
+
+div.dark-mode-postagem > ul > li > a > div > div > div.item-title-row > div.item-title,
+div.dark-mode-postagem > ul > li > a > div > div > div.item-title-row > div.item-after {
+  color: var(--text-color-dark);
+}
+
+div.dark-mode-postagem > ul > li > a > div > div > div.item-subtitle,
+div.dark-mode-postagem > ul > li > a > div > div > div.item-text {
+  color: white;
+}
+
+div.list.light-mode-postagem > ul > li > * {
+  background: var(--background-color-light-list);
+  color: var(--text-color-dark);
+}
+
+div.list > ul > li {
+  margin: 20px;
+}
+
+.view-main {
+  overflow-y: auto;
+  position: absolute;
+}
+
+.menu-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#framework7-root > div.safe-areas.view.view-main > div.page.home-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 160px);
+  height: auto;
   width: calc(100vw - 160px);
   margin: 80px;
   box-shadow: 17px 20px 6px var(--box-shadow-color-light);
 }
 
-.dark-mode .page {
-  box-shadow: 17px 20px 6px var(--box-shadow-color-dark);
+#framework7-root > div.safe-areas.view.view-main > div.page.login-page {
+  transform: none;
+  background-color: var(--f7-page-bg-color);
+  box-sizing: initial;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100vw;
 }
 
-.page-content {
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: visible;
+#framework7-root > div.safe-areas.view.view-main > div.page.dark-mode {
+  box-shadow: 17px 20px 6px var(--box-shadow-color-dark);
 }
 
 .margin-top-65 {
@@ -51,26 +91,56 @@ body {
 .font-noto-large {
   font-size: 70px;
 }
+
 .font-noto-medium {
   font-size: 50px;
 }
+
 .font-noto-small {
   font-size: 20px;
 }
+
 .header-bottom > div {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   width: 100%;
 }
+
 .img-rounded {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
+
 .link-center {
   display: flex;
   align-items: stretch;
   justify-content: space-around;
   width: 100%;
+}
+
+.align-center {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.user-select-none {
+  user-select: none;
+  pointer-events: none;
+}
+
+.insertPostagem {
+  margin: 20px;
+  padding: 20px;
+  width: calc(100% - 80px);
+}
+
+.insertTextArea {
+  height: 60px;
+  overflow-y: auto;
+}
+
+.insertPostagem.dark-mode {
+  color: white;
 }

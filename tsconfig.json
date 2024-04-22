@@ -18,8 +18,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Permite JS para usar o KVstorage */
+    "allowJs": true
   },
-  "include": ["src", "tsconfig.node.json"],
+  "include": ["src/**/*", "tsconfig.node.json", "global.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
